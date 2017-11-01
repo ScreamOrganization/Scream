@@ -42,7 +42,10 @@ public class CharacterControl : MonoBehaviour {
 
 	void OnDestroy()
 	{
-		FailMenu.gameObject.SetActive(true);
+		if(FailMenu!=null)
+		{
+			FailMenu.gameObject.SetActive(true);
+		}	
 	}
 
 }
