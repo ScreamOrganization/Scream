@@ -27,9 +27,7 @@ public class Bullet : MonoBehaviour {
             return;
         }
 
-        transform.LookAt(target.position);
-   
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+		transform.position += (target.position - transform.position).normalized * speed * Time.deltaTime;
 
         Vector3 dir = target.position - transform.position;
         if (dir.magnitude < distanceArriveTarget)
